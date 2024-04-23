@@ -1,5 +1,6 @@
 import { findByText, render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
+import userEvent from '@testing-library/user-event';
 
 // test('renders learn react link', () => {
 // 	render(<App />);
@@ -52,11 +53,13 @@ test('input event', () => {
 	const inputEl = screen.getByPlaceholderText(/input.../i);
 	expect(inputEl).toBeInTheDocument();
 
+	// Отличие fireEvent от userEvent в том, fireEvent работает с конкретным событием, а userEvent воспроизводит действия пользователя (обрабатывает события нажатий клавиш и т.д)
 	fireEvent.input(inputEl, {
 		target: {
 			value: '123123'
 		}
 	});
+	// userEvent.type(inputEl, '123123')
 
 	const labelEl = screen.getByTestId('label');
 	expect(labelEl).toContainHTML('123123');
