@@ -53,7 +53,9 @@ test('input event', () => {
 	const inputEl = screen.getByPlaceholderText(/input.../i);
 	expect(inputEl).toBeInTheDocument();
 
-	// Отличие fireEvent от userEvent в том, fireEvent работает с конкретным событием, а userEvent воспроизводит действия пользователя (обрабатывает события нажатий клавиш и т.д)
+	// 	fireEvent dispatches exactly the events you tell it to and just those - even if those exact events never had been dispatched in a real interaction in a browser.
+
+	// User-event on the other hand dispatches the events like they would happen if a user interacted with the document. That might lead to the same events you previously dispatched per fireEvent directly, but it also might catch bugs that make it impossible for a user to trigger said events.
 	fireEvent.input(inputEl, {
 		target: {
 			value: '123123'
