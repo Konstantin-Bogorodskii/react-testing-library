@@ -1,14 +1,9 @@
-import { fireEvent, prettyDOM, render, screen } from '@testing-library/react';
-import { RouterProvider, createMemoryRouter } from 'react-router-dom';
-import routes from './router/routes';
+import { fireEvent, prettyDOM, screen } from '@testing-library/react';
+import renderMemoryRouter from './tests/helpers/renderMemoryRouter';
 
 describe('router test', () => {
 	test('successful moving between pages', () => {
-		const router = createMemoryRouter(routes, {
-			initialEntries: ['/']
-		});
-
-		render(<RouterProvider router={router} />);
+		renderMemoryRouter();
 
 		const mainLinkEl = screen.getByTestId('main-link');
 		const aboutLinkEl = screen.getByTestId('about-link');
@@ -22,20 +17,12 @@ describe('router test', () => {
 	});
 
 	test('moving to a non-existent path', () => {
-		const router = createMemoryRouter(routes, {
-			initialEntries: ['/123123']
-		});
-
-		render(<RouterProvider router={router} />);
+		renderMemoryRouter('/123123');
 		expect(screen.getByTestId('error-page')).toBeInTheDocument();
 	});
 
 	test('redirect  to user detail page', () => {
-		const router = createMemoryRouter(routes, {
-			initialEntries: ['/users/3']
-		});
-
-		render(<RouterProvider router={router} />);
+		renderMemoryRouter('/users/3');
 		expect(screen.getByTestId('user-detail-page-3')).toBeInTheDocument();
 	});
 });
