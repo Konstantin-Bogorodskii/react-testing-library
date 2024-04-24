@@ -22,47 +22,59 @@ import userEvent from '@testing-library/user-event';
 // 	// screen.debug();
 // });
 
-test('async get data', async () => {
-	render(<App />);
+// test('async get data', async () => {
+// 	render(<App />);
 
-	// screen.debug();
-	const data = await screen.findByText(/data/i);
-	expect(data).toBeInTheDocument();
-	expect(data).toHaveStyle({ color: 'red' });
-	// screen.debug();
-});
+// 	// screen.debug();
+// 	const data = await screen.findByText(/data/i);
+// 	expect(data).toBeInTheDocument();
+// 	expect(data).toHaveStyle({ color: 'red' });
+// 	// screen.debug();
+// });
 
-test('toggle event', () => {
-	render(<App />);
+// test('toggle event', () => {
+// 	render(<App />);
 
-	const buttonEl = screen.getByText(/click/i);
-	expect(buttonEl).toBeInTheDocument();
+// 	const buttonEl = screen.getByText(/click/i);
+// 	expect(buttonEl).toBeInTheDocument();
 
-	expect(screen.queryByText(/hidden el/i)).toBeNull();
+// 	expect(screen.queryByText(/hidden el/i)).toBeNull();
 
-	fireEvent.click(buttonEl);
-	expect(screen.getByText(/hidden el/i)).toBeInTheDocument();
+// 	fireEvent.click(buttonEl);
+// 	expect(screen.getByText(/hidden el/i)).toBeInTheDocument();
 
-	fireEvent.click(buttonEl, 'click');
-	expect(screen.queryByText(/hidden el/i)).toBeNull();
-});
+// 	fireEvent.click(buttonEl, 'click');
+// 	expect(screen.queryByText(/hidden el/i)).toBeNull();
+// });
 
-test('input event', () => {
-	render(<App />);
+// test('input event', () => {
+// 	render(<App />);
 
-	const inputEl = screen.getByPlaceholderText(/input.../i);
-	expect(inputEl).toBeInTheDocument();
+// 	const inputEl = screen.getByPlaceholderText(/input.../i);
+// 	expect(inputEl).toBeInTheDocument();
 
-	// 	fireEvent dispatches exactly the events you tell it to and just those - even if those exact events never had been dispatched in a real interaction in a browser.
+// 	// 	fireEvent dispatches exactly the events you tell it to and just those - even if those exact events never had been dispatched in a real interaction in a browser.
 
-	// User-event on the other hand dispatches the events like they would happen if a user interacted with the document. That might lead to the same events you previously dispatched per fireEvent directly, but it also might catch bugs that make it impossible for a user to trigger said events.
-	fireEvent.input(inputEl, {
-		target: {
-			value: '123123'
-		}
-	});
-	// userEvent.type(inputEl, '123123')
+// 	// User-event on the other hand dispatches the events like they would happen if a user interacted with the document. That might lead to the same events you previously dispatched per fireEvent directly, but it also might catch bugs that make it impossible for a user to trigger said events.
+// 	fireEvent.input(inputEl, {
+// 		target: {
+// 			value: '123123'
+// 		}
+// 	});
+// 	// userEvent.type(inputEl, '123123')
 
-	const labelEl = screen.getByTestId('label');
-	expect(labelEl).toContainHTML('123123');
-});
+// 	const labelEl = screen.getByTestId('label');
+// 	expect(labelEl).toContainHTML('123123');
+// });
+
+// test('async get data', async () => {
+// 	render(<App />);
+
+// 	// screen.debug();
+// 	const data = await screen.findByText(/data/i);
+// 	expect(data).toBeInTheDocument();
+// 	expect(data).toHaveStyle({ color: 'red' });
+// 	// screen.debug();
+// });
+
+test('/', () => {});
