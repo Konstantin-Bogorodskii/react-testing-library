@@ -4,6 +4,7 @@ import AboutPage from '../pages/AboutPage';
 import ErrorPage from '../pages/ErrorPage';
 import MainPage from '../pages/MainPage';
 import UserDetailPage from '../pages/UserDetailPage';
+import HelloWorld from './../pages/HelloWorld';
 
 import Users from '../components/users/Users';
 
@@ -33,6 +34,10 @@ const routes = [
 						element: <UserDetailPage />
 					}
 				]
+			},
+			{
+				path: 'hello-world',
+				element: <HelloWorld />
 			}
 		]
 	},

@@ -18,6 +18,11 @@ const Navbar = () => {
 				data-testid="users-link">
 				Users
 			</Link>
+			<Link
+				to="/hello-world"
+				data-testid="hello-world-link">
+				Hello World
+			</Link>
 		</div>
 	);
 };
