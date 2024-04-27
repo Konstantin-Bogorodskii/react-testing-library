@@ -7,6 +7,7 @@ import UserDetailPage from '../pages/UserDetailPage';
 import HelloWorld from './../pages/HelloWorld';
 
 import Users from '../components/users/Users';
+import UsersForTests from '../components/usersForTests/UsersForTests.jsx';
 
 const routes = [
 	{
@@ -34,6 +35,10 @@ const routes = [
 						element: <UserDetailPage />
 					}
 				]
+			},
+			{
+				path: 'users-for-tests',
+				element: <UsersForTests />
 			},
 			{
 				path: 'hello-world',

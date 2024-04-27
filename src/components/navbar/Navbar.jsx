@@ -19,6 +19,11 @@ const Navbar = () => {
 				Users
 			</Link>
 			<Link
+				to="/users-for-tests"
+				data-testid="users-for-tests-link">
+				Users For Tests
+			</Link>
+			<Link
 				to="/hello-world"
 				data-testid="hello-world-link">
 				Hello World
